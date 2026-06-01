@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits/model/fruit_response.dart';
+import 'package:fruits/model/fruit.dart';
 import '../repository/fruit_repository.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late final FruitRepository _fruitRepository;
-  late final Future<List<FruitResponse>>? _fruitFuture;
+  late final Future<List<Fruit>>? _fruitFuture;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Fruits')),
-      body: FutureBuilder<List<FruitResponse>>(
+      body: FutureBuilder<List<Fruit>>(
         future: _fruitFuture,
         builder: (context, snapshot) {
           final connectionState = snapshot.connectionState;

@@ -13,5 +13,4 @@ class FruitApiClient {
     return fruits.toList();
   }
 
-  //Future<FruitResponse> getFruit(String name) {}
 }

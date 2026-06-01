@@ -1,5 +1,5 @@
-import 'package:fruits/model/fruit_response.dart';
+import '../model/fruit.dart';
 
 abstract class FruitRepository {
-  Future<List<FruitResponse>> getFruits();
+  Future<List<Fruit>> getFruits();
 }

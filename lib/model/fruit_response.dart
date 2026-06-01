@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'fruit.dart';
+
 part 'fruit_response.g.dart';
 
 @JsonSerializable(explicitToJson: true, createToJson: false)
@@ -20,6 +22,16 @@ class FruitResponse extends Equatable {
     required this.id,
     required this.nutritions,
   });
+
+  Fruit toFruit() {
+    return Fruit(
+      name: name,
+      family: family,
+      order: order,
+      genus: genus,
+      id: id,
+    );
+  }
 
   factory FruitResponse.fromJson(Map<String, dynamic> json) =>
       _$FruitResponseFromJson(json);
